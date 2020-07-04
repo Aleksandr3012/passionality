@@ -1,0 +1,34 @@
+extends layout/main.pug
+
+
+include ../blocks/sCatalog/_sCatalog.pug 
+include ../blocks/sProd/_sProd.pug 
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Туалетная вода Cerruti 1881'
+	title= title
+block pagecontent 
+	//- +mob-mnu()
+	+header()
+		+topLine() 
+		+top-nav()
+	//- +headerBlock()
+	.container
+		+breadcrumb('Главная','Каталог','Женская прафюмерия', title)
+	+sProd(title)
+	.container
+		+sCatalog(class="sCatalog--similar")
+			+catalogName('ПОХОЖИЕ ТОВАРЫ')
+			.row
+				.col-6.col-lg-3
+					+catalogItem('catalog-1','Туалетная вода Trussardi My Land','2900 руб.')(class="new-position")
+				.col-6.col-lg-3
+					+catalogItem('catalog-2','Туалетная вода Trussardi My Land','2900 руб.')
+				.col-6.col-lg-3
+					+catalogItem('catalog-3','Туалетная вода Trussardi My Land','2900 руб.')
+				.col-6.col-lg-3
+					+catalogItem('catalog-4','Туалетная вода Trussardi My Land','2900 руб.')
+	+footer()
+	

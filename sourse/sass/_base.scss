@@ -29,6 +29,10 @@ html {
 	}
 }
 
+h2, .h2 {
+	text-transform: uppercase;
+}
+
 
 .section {
 	@include bgs; 
@@ -382,6 +386,31 @@ img.img-bg,
 }
 
 // .pagination-wrapper li
+.pagination {
+	padding-top: rem(33);
+	padding-bottom: rem(60);
+	display: flex;
+	justify-content: center;
+
+	.next, .prev {
+		background-color: #e1e1e1;
+		border-radius: 5px;
+		img {
+			margin-top: -2px;
+		}
+	}
+
+	.prev img{
+		transform: rotate(180deg);
+	}
+
+	.active a{
+		// background-color: transparent !important;
+		color: $pink !important;
+		vertical-align: top;
+
+	}
+}
 
 .browsehappy {
 	position: absolute;
@@ -461,4 +490,28 @@ iframe {
 	padding: rem(7px);
 	margin-left: auto;
 	margin-right: auto;
+	@include mt;
+
+	&:hover {
+		transform: scale(1.05);
+		color: $warning;
+	}
+}
+
+.btn-white {
+	max-width: rem(154px);
+	width: 100%;
+	padding: rem(8);
+	font-size: rem(13);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid $body-color;
+	border-radius: rem(30);
+	@include mt;
+
+	&:hover {
+		transform: scale(1.02);
+		color: $danger;
+	}
 }

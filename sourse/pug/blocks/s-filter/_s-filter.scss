@@ -1,0 +1,119 @@
+
+// start .sFilter
+.s-filter {
+	border: 1px solid $gray-200;
+	padding: rem(25) rem(13) rem(22) rem(15);
+
+	&__title {
+		margin-bottom: rem(10);
+	}
+
+	.custom-input {
+		width: 100%;
+		padding-left: rem(24);
+		margin-bottom: .65rem !important;
+		&__lab {
+			background: #e1e1e1;
+			/* 22 */
+
+			// border: 1px solid #9FA3A7;
+			border-radius: 50%;
+			width: rem(16);
+			height: rem(16);
+			margin-right: rem(5);
+		}
+		margin-bottom: rem(8);
+		&__text {
+		 position: relative;
+		 top: rem(1);
+		}
+	}
+
+	.custom-input__input[type='checkbox'] + .custom-input__lab {
+		background: #e1e1e1;
+		&::after {
+			content: '';
+			@include a-cent;
+			background-color: $pink;
+			border-radius: 50%;
+			width: 8px;
+			height: 8px;
+		}
+	}
+
+	.showhide-all {
+		margin-bottom: rem(20);
+
+		&__inner {
+			max-height: rem(201);
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+	}
+
+	.minus, .plus {
+		font-size: 13px;
+		border: none;
+	}
+
+	.plus {
+		text-align: right;
+	}
+
+	.inputWrap {
+		margin-top: rem(-7);
+		display: flex;
+		justify-content: space-between;
+		input {
+			max-width: rem(50);
+		}
+	}
+
+	.range-wrap {
+		margin-top: rem(-27);
+	}
+
+	.irs--round .irs-bar {
+		background-color: #e1e1e1;
+	}
+
+	.irs--round .irs-line {
+		background-color: $pink;
+	}
+
+	.irs--round .irs-handle {
+		box-shadow: none;
+		border-color: $pink;
+		width: $h6-font-size;
+		height: $h6-font-size;
+		top: 30px;
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sFilter
+
+.s-filter-wrap {
+
+}

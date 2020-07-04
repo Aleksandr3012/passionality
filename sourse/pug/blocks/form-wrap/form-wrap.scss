@@ -6,7 +6,16 @@
 		&__input{
 			// @extend .form-control;
 		//  outline: 0 !important;
-		 resize: none;
+		border: none;
+		border-radius: rem(40);
+		padding-top: rem(16);
+		padding-bottom: rem(16);
+		resize: none;
+		font-size: rem(16);
+		margin-bottom: 0;
+		&::placeholder {
+			color: #dcdcdc;
+		}
  	}
  	&__btn{
  		cursor: pointer;

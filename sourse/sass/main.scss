@@ -42,8 +42,14 @@ $output-bourbon-deprecation-warnings: false;
 .breadcrumb {
 	.active {
 		a {
-			// color: $breadcrumb-active-color;
+			color: $breadcrumb-active-color;
 			pointer-events: none;
+		}
+	}
+	a {
+		color: $light;
+		&:hover {
+			color: $breadcrumb-active-color;
 		}
 	}
 }

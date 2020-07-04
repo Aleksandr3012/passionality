@@ -1,0 +1,42 @@
+extends layout/main.pug
+
+
+include ../blocks/sCatalog/_sCatalog.pug 
+include ../blocks/s-filter/_s-filter.pug 
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Женская прафюмерия'
+	title= title
+block pagecontent 
+	//- +mob-mnu()
+	+header()
+		+topLine() 
+		+top-nav()
+	//- +headerBlock()
+	.container
+		+breadcrumb('Главная','Каталог', title)
+		h2.pt-2.mb-4= title
+		.row
+			.col-lg-3
+			.col-lg
+				+sorting
+		.row
+			.col-lg-3.d-none.d-lg-block
+				+s-filter
+			.col-lg
+				.row
+					mixin rowItem
+						.col-6.col-lg-4
+							+catalogItem('catalog-1','Туалетная вода Trussardi My Land','2900 руб.')
+						.col-6.col-lg-4
+							+catalogItem('catalog-2','Туалетная вода Trussardi My Land','2900 руб.')
+						.col-6.col-lg-4
+							+catalogItem('catalog-3','Туалетная вода Trussardi My Land','2900 руб.')
+					+rowItem()
+					+rowItem()
+					+rowItem()
+				+pugin()
+	+footer()
+	

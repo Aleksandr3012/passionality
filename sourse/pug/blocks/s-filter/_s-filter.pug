@@ -1,0 +1,87 @@
+mixin s-filter()
+	.s-filter-wrap
+		// start s-filter
+		mixin in-c2(typ="checkbox", text, name= typ )
+			+b.LABEL.custom-input
+				+e.INPUT.input(type= typ , name= name)&attributes(attributes)
+				+e.SPAN.lab
+				if block
+					block 
+				else
+					+e.SPAN.text= text
+		+b.s-filter&attributes(attributes) 
+			mixin range(c1, c2)
+				.range-wrap.price_slider_amount
+					input.range-slider.slider-js(type='text'  data-min= c1  data-max= c2)
+					.inputWrap
+						label
+							+b.INPUT.minus(type="text" readonly) 
+						label
+							+b.INPUT.plus(type="text" readonly)
+
+			mixin  group(t)
+				+e.group
+					+e.title.showhide.active= t 
+						span
+							+icon('chevron-right')
+					.showhide-all
+						.showhide-all__inner
+							block
+
+			+group('Бренды:')
+				-
+					var list = [
+						'Byredo(1)',
+						'Cacharel(2)',
+						'Calvin Klein(5)',
+						'Carolina Herrera(3)',
+						'Cerruti(1)',
+						'Byredo(1)',
+						'Cacharel(2)',
+						'Calvin Klein(5)',
+						'Carolina Herrera(3)',
+						'Cerruti(1)',
+					]
+				each item in list
+					+in-c2("checkbox",item)
+			
+			+group('Тип:')
+				-
+					var list = [
+						'Духи(1)',
+						'Дымка для тела(1)',
+						'Одеколон(1)',
+						'Парфюмерная вода(75)',
+						'Туалетная вода(48)',
+						'Духи(1)',
+						'Дымка для тела(1)',
+						'Одеколон(1)',
+						'Парфюмерная вода(75)',
+						'Туалетная вода(48)',
+					]
+				each item in list
+					+in-c2("checkbox",item)
+			
+			+group('Объем:')
+				-
+					var list = [
+						'1 мл пробник(5)',
+						'1.5 мл пробник(11)',
+						'10 мл миниатюра(4)',
+						'10 мл миниатюра',
+						'без коробки(2)',
+						'10 мл отливант(1)',
+						'1 мл пробник(5)',
+						'1.5 мл пробник(11)',
+						'10 мл миниатюра(4)',
+						'10 мл миниатюра',
+						'без коробки(2)',
+						'10 мл отливант(1)',
+					]
+				each item in list
+					+in-c2("checkbox",item)
+
+			+group('Цена:')
+				+range("450", "12900")
+			+e.discharge.btn.btn-white(type="button") Сбросить фильтры
+	// end s-filter

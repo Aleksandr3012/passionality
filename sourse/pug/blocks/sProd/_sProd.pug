@@ -1,0 +1,54 @@
+mixin sProd(title)
+	// start sProd
+	+b.SECTION.sProd.section#sProd&attributes(attributes)
+		.container
+			.row
+				.col-lg-6.col-xl-auto
+					+e.imgWrap
+						img.res-i(src="img/@2x/prod.jpg", alt="alt")
+						+e.iconWrap
+							+icon('heart')
+				+e.col.col
+					h2= title
+					+e.info.text-light
+						div Артикул: 387
+						div Категория: Женская парфюмерия
+						div Бренд: Cerruti 
+					.row
+						+e.inputCol.col-sm-auto
+							+e.capacity
+								p Выбрать объем:
+								+b.select-group.input-group
+									.custom-select-wrap
+										select.custom-select-js.form-control(name="capacity")
+											option(value="100 мл.") 100 мл.
+											option(value="200 мл.") 200 мл.
+											option(value="300 мл.") 300 мл.
+											option(value="500 мл.") 500 мл.
+							+e.price Цена:
+								span 1000 руб
+						.col-sm
+							+e.basket.btn.btn-primary(type="button") Добавить в корзину
+					+e.aromas.text-light
+						p Группа ароматов: 
+							span цветочные
+						p Верхние ноты:
+							span бергамот, жасмин, ирис, ландыш, мимоза, роза, фиалка, фрезия
+						p Ноты сердца:
+							span гальбанум, герань, жасмин, ирис, кориандр, красное дерево, нарцисс, ромашка, тубероза, цветок апельсина
+						p Базовые ноты:
+							span амбра, ваниль, кедр, мускус, сандаловое дерево
+			+e.description
+				p Cerruti 1881 pour femme&nbsp;&mdash; это великолепный аромат для настоящей женщины, хрупкой и&nbsp;чувственной, нежной и&nbsp;очаровательной. Мягкая дымка этого парфюма незаметно окутает вас и&nbsp;будет в&nbsp;течение целого дня радовать своим неповторимым благоуханием. Предлагаемый парфюм уже около двадцати лет пользуется неизменной популярностью у&nbsp;женщин со&nbsp;всего света, что позволяет считать его устоявшейся во&nbsp;времени лассикой. Этот элегантный парфюм подчеркнет в&nbsp;каждой представительнице прекрасного пола чувственность и&nbsp;привлекательность, поможет ей&nbsp;с&nbsp;легкостью очаровывать мужчин и&nbsp;ощущать себя настоящей королевой.
+			+b.consultantHelp
+				.row
+					.col-lg-auto
+						+e.text
+							.h2 Затрудняетесь с&nbsp;выбором своего аромата?
+							.h6 Оставьте заявку, и&nbsp;мы&nbsp;вместе подберем идеальное решение!
+					.col-lg
+						+form-wrap()
+							+input('Введите Ваш телефон','tel')
+							+e.send.btn.btn-black(type="button") Отправить заявку
+
+	// end sProd

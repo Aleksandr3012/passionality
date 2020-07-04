@@ -532,7 +532,7 @@ $table-variants: ("primary": color-level($primary, $table-bg-level),
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
 $input-btn-padding-y: .375rem !default;
-$input-btn-padding-x: .75rem !default;
+$input-btn-padding-x: rem(16) !default;
 $input-btn-font-family: null !default;
 $input-btn-font-size: $font-size-base !default;
 $input-btn-line-height: $line-height-base !default;
@@ -944,30 +944,30 @@ $dropdown-header-padding: $dropdown-padding-y $dropdown-item-padding-x !default;
 
 // Pagination
 
-$pagination-padding-y: .375rem !default;
-$pagination-padding-x: .75rem !default;
+$pagination-padding-y: .22rem !default;
+$pagination-padding-x: .7rem !default;
 $pagination-padding-y-sm: .25rem !default;
 $pagination-padding-x-sm: .5rem !default;
 $pagination-padding-y-lg: .75rem !default;
 $pagination-padding-x-lg: 1.5rem !default;
 
-$pagination-color: $link-color !default;
+$pagination-color: #c9c9c9 !default;
 $pagination-bg: $white !default;
 $pagination-border-width: $border-width !default;
 $pagination-border-radius: $border-radius !default;
 $pagination-margin-left: -$pagination-border-width !default;
-$pagination-border-color: $gray-300 !default;
+$pagination-border-color: transparent !default;
 
 $pagination-focus-box-shadow: $input-btn-focus-box-shadow !default;
 $pagination-focus-outline: 0 !default;
 
 $pagination-hover-color: $link-hover-color !default;
-$pagination-hover-bg: $gray-200 !default;
-$pagination-hover-border-color: $gray-300 !default;
+$pagination-hover-bg: transparent !default;
+$pagination-hover-border-color: transparent !default;
 
-$pagination-active-color: $component-active-color !default;
-$pagination-active-bg: $component-active-bg !default;
-$pagination-active-border-color: $pagination-active-bg !default;
+$pagination-active-color: transparent !default;
+$pagination-active-bg: transparent !default;
+$pagination-active-border-color: transparent !default;
 
 $pagination-disabled-color: $gray-600 !default;
 $pagination-disabled-bg: $white !default;
@@ -1195,13 +1195,13 @@ $figure-caption-color: $gray-600 !default;
 // Breadcrumbs
 
 $breadcrumb-font-size: null !default;
-$breadcrumb-padding-y: $spacer / 2 !default;
-$breadcrumb-padding-x: $spacer !default;
-$breadcrumb-item-padding-x: .5rem !default;
+$breadcrumb-padding-y: rem(14) !default;
+$breadcrumb-padding-x: 0 !default;
+$breadcrumb-item-padding-x: .3rem !default;
 $breadcrumb-margin-bottom: 1rem !default;
-$breadcrumb-bg: $gray-200 !default;
-$breadcrumb-divider-color: $gray-600 !default;
-$breadcrumb-active-color: $gray-600 !default;
+$breadcrumb-bg: transparent !default;
+$breadcrumb-divider-color: $light !default;
+$breadcrumb-active-color: $body-color !default;
 $breadcrumb-divider: quote("/") !default;
 $breadcrumb-border-radius: $border-radius !default;
 

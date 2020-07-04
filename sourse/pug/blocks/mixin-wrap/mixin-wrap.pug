@@ -14,11 +14,25 @@ mixin catalogName(n)
 
 mixin catalogItem(img,title,price)
 	+b.catalogItem&attributes(attributes)
-		+e.imgWrap
+		+e.imgWrap(href="#")
 			img.lazy.res-i(src="#" data-src=`img/@2x/${img}.jpg` alt="")
 		+e.title= title
 		+e.price= price
-		+e.btn.btn-black купить
+		+e.btn.btn-black(href="#") купить
+
+mixin sorting
+	+b.sorting
+		+e.select-group-wrap
+			+e.text Сортировать:
+			+b.select-group.input-group
+				.custom-select-wrap
+					select.custom-select-js.form-control(name="capacity")
+						option(value="По популярности") По популярности
+						option(value="По новизне") По новизне
+						option(value="От дешевых") От дешевых
+						option(value="По названию") По названию
+						option(value="По новизне") По новизне
+		+e.display Отображение 1–12 #[span из 133 результатов]
 
 mixin arrow()
 	.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev

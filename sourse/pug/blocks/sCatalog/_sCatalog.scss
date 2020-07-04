@@ -13,6 +13,13 @@
 				padding-bottom: rem(27);
 			}
 		}
+
+		&--similar {
+			.catalogName {
+				padding-bottom: rem(27);
+			}
+			padding-bottom: rem(40);
+		}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
