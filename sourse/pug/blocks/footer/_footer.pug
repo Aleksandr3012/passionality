@@ -1,4 +1,39 @@
 mixin footer()
 	+b.FOOTER.footer.block-with-lazy
 		.container
-			h2 footer
+			.row
+				.col-lg-auto.mb-3
+					+e.logo(href="#")
+						img.res-i.lazy(src="#" data-src="img/@2x/logo.png" alt="")
+					+e.magazDescr Интернет-магазин парфюмерии
+				.col-lg-auto.mb-3
+					+e.menu
+						ul
+							li: a(href="#") Доставка
+							li: a(href="#") Оплата
+						ul
+							li: a(href="#") Сертификаты
+							li: a(href="#") Статьи
+							li: a(href="#") Бренды
+				.col-lg-auto.mb-3
+					+e.payment
+						p Мы принимаем
+						+e.imgWrap
+							img.res-i(src="img/@2x/payment.jpg", alt="")
+				.col-lg-auto.mb-3.justify-content-between
+					+e.soc
+						p Мы в соц.сетях
+						+e.socItem(href="#")
+							img.res-i.lazy(src="#" data-src="img/@2x/inst.png", alt="")
+						+e.socItem(href="#")
+							img.res-i.lazy(src="#" data-src="img/@2x/vk.png", alt="")
+				.col-lg-auto.mb-3
+					+e.contact
+						+e.phone(href="tel:+7(978)015-15-33") +7 (978) #[span 015-15-33]
+						+e.phone(href="tel:+7(978)736-19-26") +7 (978) #[span 736-19-26]
+						+e.messengers
+							+e.whatsapp(href="https://wa.me/79780151533" target="_blank")
+								img.res-i.lazy(src="#" data-src="img/@2x/whatsapp.png", alt="")
+							+e.viber(href="#")
+								img.res-i.lazy(src="#" data-src="img/@2x/viber.png", alt="")
+			+e.foot © "Passionality" 1996 - 2020

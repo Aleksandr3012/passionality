@@ -1,17 +1,76 @@
 // start .headerBlock
 .headerBlock {
-	margin-bottom: 1px;
-	min-height: 100vh;
-	min-height: calc(var(--vh, 1vh) * 100);
+	padding-top: rem(20);
+	padding-bottom: rem(36);
+	// min-height: 100vh;
+	// min-height: calc(var(--vh, 1vh) * 100);
 	// background-image: url(../img);
 	// background-color: #000000;
-
-	h1 {
-		margin-bottom: 1px;
+	
+	.container {
+		position: relative;
 	}
 
-	h2 {
-		margin-bottom: 1px;
+	h1, .h1 {
+		text-transform: uppercase;
+		letter-spacing: rem(-0.5);
+		margin-bottom: rem(10);
+		@include media-breakpoint-up(lg) {
+			margin-bottom: rem(34);
+		}
+		span {
+			font-weight: 300;
+			display: block;
+			letter-spacing: 0;
+		}
+	}
+
+	.h1 {
+		color: $pink;
+		line-height: 1.1;
+	}
+
+	.section-title {
+		padding-bottom: rem(10);
+		@include media-breakpoint-up(lg) {
+			padding-bottom: 0;
+		}
+	}
+
+	&__baner {
+		overflow: hidden;
+		position: relative;
+		padding: rem(20);
+		@include media-breakpoint-up(lg) {
+			padding: rem(60) rem(68) rem(88);
+		}
+		margin-bottom: rem(20);
+		img {
+			// height: auto;
+		}
+	}
+
+	&__details {
+		margin-top: rem(-3);
+	}
+
+	&__leftIMG, &__rightIMG {
+		position: absolute;
+		z-index: -2;
+	}
+
+	&__leftIMG {
+		top: 0;
+		left: -20%;
+	}
+
+	&__rightIMG {
+		bottom: 0;
+		right: -20%;
+	}
+
+	.swiper-wrapper {
+		align-items: center;
 	}
 
 	@include media-breakpoint-up(xl) {}

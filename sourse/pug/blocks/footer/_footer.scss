@@ -1,6 +1,118 @@
 .footer {
-		
+	background-color: #111111;
+	color: $gray-500;
+	padding-top: rem(45);
+	padding-bottom: rem(30);
+	@include media-breakpoint-down(lg) {
+		text-align: center;
+	}
 
+	&__menu {
+		@include media-breakpoint-up(md) {
+			display: flex;
+			justify-content: space-between;
+		}
+		max-width: rem(270);
+		margin-left: auto;
+		margin-right: auto;
+		@include media-breakpoint-up(xl) {
+			min-width: rem(254);
+			margin-right: rem(30);
+		}
+	}
+
+	li {
+		list-style: none;
+		margin-bottom: rem(10);
+		margin-right: rem(10);
+		a {
+			color: $gray-500;
+
+			&:hover {
+				color: $warning;
+			}
+		}
+	}
+
+	&__imgWrap {
+		@include media-breakpoint-only(lg) {
+			margin-left: rem(-10);
+			max-width: rem(130);
+		}
+	}
+
+	&__magazDescr {
+		margin-top: rem(-2);
+		margin-bottom: rem(20);
+	}
+
+	&__logo {
+		margin-left: auto;
+		margin-right: auto;
+		@include media-breakpoint-up(lg) {
+			margin-top: rem(-11);
+		}
+		@include media-breakpoint-up(xl) {
+			margin-right: rem(32);
+		}
+		display: block;
+		max-width: rem(229);
+	}
+
+	&__phone {
+		display: block;
+		color: $gray-500;
+		// margin-bottom: rem(8);
+		span {
+			font-weight: 900;
+		}
+
+		&:hover {
+			color: $warning;
+		}
+	}
+
+	&__payment {
+		@include media-breakpoint-up(xl) {
+			margin-right: rem(33);
+		}
+		p {
+			margin-bottom: rem(6);
+		}
+	}
+
+	&__soc {
+		@include media-breakpoint-up(xl) {
+			margin-right: rem(20);
+		}
+		p {
+			margin-bottom: rem(8);
+		}
+	}
+	&__socItem {
+		margin-left: 2px;
+		margin-right: rem(12);
+
+	}
+
+	&__messengers {
+		margin-left: rem(10);
+		padding-top: rem(10);
+	}
+
+	&__whatsapp {
+		margin-right: rem(6);
+	}
+
+	&__contact {
+		padding-top: rem(2);
+		// margin-right: rem(20);
+	}
+
+	&__foot {
+		padding-top: rem(34);
+		font-size: $small;
+	}
 
 // 
 @include media-breakpoint-up(xl) {}

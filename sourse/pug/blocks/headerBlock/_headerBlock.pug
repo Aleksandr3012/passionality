@@ -2,9 +2,30 @@ mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
-
-			.row
+			+e.leftIMG.lazy(src="#" data-src="img/@2x/header-bg-left.png" alt="")
+			+e.rightIMG.lazy(src="#" data-src="img/@2x/header-bg-right.png" alt="")
+			+e.baner
+				img.img-bg(src="img/@2x/headerBanner.jpg", alt="")
+				+b.section-title
+					h1 Летняя коллекция
+						span Уже в продаже!
+					.h1 #[span СКИДКИ]
+						|ДО 20%
+				+e.details.btn-primary(href="#") Смотреть новую коллекцию
+			+b.brands-slider
+				.swiper-container.brands-slider-js
+					.swiper-wrapper
+						mixin brandsSlide(i)
+							.swiper-slide
+								a(href="#")
+									img.res-i(src=`img/@2x/brandsSlide-${i}.png`, alt="")
+						+brandsSlide(1)
+						+brandsSlide(2)
+						+brandsSlide(3)
+						+brandsSlide(4)
+						+brandsSlide(1)
+						+brandsSlide(2)
+						+brandsSlide(4)
+						+brandsSlide(3)
 						
 	// end headerBlock

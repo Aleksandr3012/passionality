@@ -22,6 +22,8 @@ mixin top-nav()
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
-			+mnu()
+			.d-none.d-lg-block
+				+mnu()
+			+mob-mnu
 					
 	// end top-nav

@@ -1,11 +1,5 @@
 "use strict";
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var $ = jQuery;
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
@@ -78,15 +72,13 @@ var JSCCommon = {
 		var _this = this;
 
 		if (_this.menuMobileLink) {
-			_this.toggleMenu();
+			_this.toggleMenu(); // _this.menuMobileLink.forEach(function (element) {
+			// 	element.addEventListener('click', function (e) {
+			// 		console.log(element);
+			// 		_this.closeMenu();
+			// 	});
+			// })
 
-			_this.menuMobileLink.forEach(function (element) {
-				element.addEventListener('click', function (e) {
-					console.log(element);
-
-					_this.closeMenu();
-				});
-			});
 
 			document.addEventListener('mouseup', function (event) {
 				var container = event.target.closest(".menu-mobile--js.active"); // (1)
@@ -113,21 +105,13 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _objectSpread2;
-
-	// полифил для object-fit
-	objectFitImages(); // Picture element HTML5 shiv
-
-	document.createElement("picture"); // для свг
-
-	svg4everybody({});
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/main.png);"></div>')
+	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -142,26 +126,25 @@ function eventHandler() {
 	// /закрыть/открыть мобильное меню
 
 	function heightses() {
-		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
-		// $(".otz__item .text-wrap ").height('auto').equalHeights();
-		// 
 		// скрывает моб меню
+		var topH = document.querySelector('header').scrollHeight;
+		var stickyElement = document.querySelector('.top-nav');
 
-		var topH = $("header ").innerHeight();
-		$(window).scroll(function () {
+		window.onscroll = function () {
 			if ($(window).scrollTop() > topH) {
-				$('.top-nav  ').addClass('fixed');
+				stickyElement.classList.add('fixed');
 			} else {
-				$('.top-nav  ').removeClass('fixed');
+				stickyElement.classList.remove('fixed');
 			}
-		}); // конец добавил
+		}; // конец добавил
+
 
 		if (window.matchMedia("(min-width: 992px)").matches) {
 			JSCCommon.closeMenu();
 		}
 	}
 
-	$(window).resize(function () {
+	window.addEventListener('resize', function () {
 		heightses();
 	});
 	heightses(); // листалка по стр
@@ -174,74 +157,86 @@ function eventHandler() {
 		}, 1100);
 		return false;
 	});
-	var defaultSl = {};
-	var swiper4 = new Swiper('.color-slider', _objectSpread(_objectSpread({}, defaultSl), {}, (_objectSpread2 = {
-		slidesPerView: 'auto',
-		watchOverflow: true,
-		spaceBetween: 0,
-		freeMode: true
-	}, _defineProperty(_objectSpread2, "watchOverflow", true), _defineProperty(_objectSpread2, "slidesPerGroup", 3), _defineProperty(_objectSpread2, "loop", true), _defineProperty(_objectSpread2, "loopFillGroupWithBlank", true), _defineProperty(_objectSpread2, "touchRatio", 0.2), _defineProperty(_objectSpread2, "slideToClickedSlide", true), _defineProperty(_objectSpread2, "freeModeMomentum", true), _defineProperty(_objectSpread2, "navigation", {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}), _objectSpread2))); // modal window
-
-	var gets = function () {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
+	var partnersSlider = new Swiper('.brands-slider-js', {
+		loop: true,
+		spaceBetween: 20,
+		//responsive
+		breakpoints: {
+			1245: {
+				slidesPerView: 7
+			},
+			992: {
+				slidesPerView: 6
+			},
+			768: {
+				slidesPerView: 5
+			},
+			0: {
+				slidesPerView: 3
+			}
+		},
+		//lazy load
+		lazy: {
+			loadPrevNext: true
+		},
+		//autoplay
+		autoplay: {
+			delay: 6000
 		}
+	}); // modal window
+	// var gets = (function () {
+	// 	var a = window.location.search;
+	// 	var b = new Object();
+	// 	var c;
+	// 	a = a.substring(1).split("&");
+	// 	for (var i = 0; i < a.length; i++) {
+	// 		c = a[i].split("=");
+	// 		b[c[0]] = c[1];
+	// 	}
+	// 	return b;
+	// })();
+	// // form
+	// var gets = (function () {
+	// 	var a = window.location.search;
+	// 	var b = new Object();
+	// 	var c;
+	// 	a = a.substring(1).split("&");
+	// 	for (var i = 0; i < a.length; i++) {
+	// 		c = a[i].split("=");
+	// 		b[c[0]] = c[1];
+	// 	}
+	// 	return b;
+	// })();
+	// // form
+	// $("form").submit(function (e) {
+	// 	e.preventDefault();
+	// 	const th = $(this);
+	// 	var data = th.serialize();
+	// 	th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
+	// 	th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
+	// 	th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
+	// 	th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
+	// 	$.ajax({
+	// 		url: 'action.php',
+	// 		type: 'POST',
+	// 		data: data,
+	// 	}).done(function (data) {
+	// 		$.fancybox.close();
+	// 		$.fancybox.open({
+	// 			src: '#modal-thanks',
+	// 			type: 'inline'
+	// 		});
+	// 		// window.location.replace("/thanks.html");
+	// 		setTimeout(function () {
+	// 			// Done Functions
+	// 			th.trigger("reset");
+	// 			// $.magnificPopup.close();
+	// 			// ym(53383120, 'reachGoal', 'zakaz');
+	// 			// yaCounter55828534.reachGoal('zakaz');
+	// 		}, 4000);
+	// 	}).fail(function () { });
+	// });
 
-		return b;
-	}(); // form
-
-
-	var gets = function () {
-		var a = window.location.search;
-		var b = new Object();
-		var c;
-		a = a.substring(1).split("&");
-
-		for (var i = 0; i < a.length; i++) {
-			c = a[i].split("=");
-			b[c[0]] = c[1];
-		}
-
-		return b;
-	}(); // form
-
-
-	$("form").submit(function (e) {
-		e.preventDefault();
-		var th = $(this);
-		var data = th.serialize();
-		th.find('.utm_source').val(decodeURIComponent(gets['utm_source'] || ''));
-		th.find('.utm_term').val(decodeURIComponent(gets['utm_term'] || ''));
-		th.find('.utm_medium').val(decodeURIComponent(gets['utm_medium'] || ''));
-		th.find('.utm_campaign').val(decodeURIComponent(gets['utm_campaign'] || ''));
-		$.ajax({
-			url: 'action.php',
-			type: 'POST',
-			data: data
-		}).done(function (data) {
-			$.fancybox.close();
-			$.fancybox.open({
-				src: '#modal-thanks',
-				type: 'inline'
-			}); // window.location.replace("/thanks.html");
-
-			setTimeout(function () {
-				// Done Functions
-				th.trigger("reset"); // $.magnificPopup.close();
-				// ym(53383120, 'reachGoal', 'zakaz');
-				// yaCounter55828534.reachGoal('zakaz');
-			}, 4000);
-		}).fail(function () {});
-	});
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {

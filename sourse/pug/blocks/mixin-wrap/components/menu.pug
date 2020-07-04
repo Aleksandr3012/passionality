@@ -25,18 +25,27 @@ mixin mnu()
 
 //- menu
 mixin mnu()
-	-
-		var nav= {
-			"Главная":"/",
-			"Услуги  ":"#",
-			"Подбор септика   ":"#",
-			"Акции ":"#"," О компании  ":"#",
-			" Доставка и оплата ":"#",
-			" Клиентам  ":"#",
-			" Наши работы   ":"#",
-			"Контакты ":"#sContact"
-			}
+	//- -
+	//- 	var nav= {
+	//- 		"Главная":"/",
+	//- 		"Услуги  ":"#",
+	//- 		"Подбор септика   ":"#",
+	//- 		"Акции ":"#"," О компании  ":"#",
+	//- 		" Доставка и оплата ":"#",
+	//- 		" Клиентам  ":"#",
+	//- 		" Наши работы   ":"#",
+	//- 		"Контакты ":"#sContact"
+	//- 		}
 	+e.UL.nav(itemscope itemtype="http://schema.org/SiteNavigationElement")
-		each linkPatch, linkName in nav
-			+e.LI.item( itemprop="item" ): +e.A.link(href= linkPatch  itemprop="url")= linkName
+		//- each linkPatch, linkName in nav
+		+e.LI.item( itemprop="item" ): +e.A.link(href="#" itemprop="url") Главная
+		+e.LI.item( itemprop="item" ): +e.A.link(href="#" itemprop="url") Женская парфюмерия
+		+e.LI.item( itemprop="item" ): +e.A.link(href="#" itemprop="url") Мужская парфюмерия
+		+e.LI.item( itemprop="item" ): +e.A.link(href="#" itemprop="url") Бренды
+		+e.LI.item( itemprop="item" ): +e.A.link(href="#" itemprop="url")
+			+icon('percent')
+			| Акции
+		+e.LI.item( itemprop="item" ): +e.A.link(href="#" itemprop="url") 
+			+icon('present')
+			| Подарки
 //- /menu

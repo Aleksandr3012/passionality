@@ -1,0 +1,9 @@
+.brands-slider {
+	background-color: $gray-200;
+
+	.swiper-slide {
+		text-align: center;
+		padding-top: rem(13);
+		padding-bottom: rem(11);
+	}
+}

@@ -1,7 +1,108 @@
+// start .topLine
+.topLine {
+	background-color: #111111;
+	color: #fff;
+	padding-top: rem(10);
+	padding-bottom: rem(19);
 
-	// start .topLine
-	.topLine {
-		 
+	&__phone {
+		color: $gray-500;
+
+		span {
+			font-weight: 900;
+		}
+
+		&:hover {
+			color: $warning;
+		}
+		@include media-breakpoint-down(sm) {
+			font-size: rem(12);
+		}
+	}
+
+	&__logo {
+		@include media-breakpoint-down(md) {
+			margin-bottom: rem(10);
+			display: block;
+		}
+	}
+
+	&__viber {
+		margin-left: rem(5);
+		margin-right: rem(5);
+		@include media-breakpoint-up(sm) {
+			margin-right: rem(8);
+			margin-left: rem(6);
+		}
+	}
+
+	&__whatsapp {
+		margin-left: rem(5);
+		@include media-breakpoint-up(sm) {
+			margin-left: rem(22);
+		}
+	}
+
+	&__viber, &__whatsapp {
+		img {
+			@include mt(0.1);
+		}
+		&:hover img{
+			transform: scale(1.05);
+		}
+	}
+
+	.row {
+		justify-content: center;
+		@include media-breakpoint-up(lg) {
+			justify-content: space-between;
+		}
+	}
+	
+	&__col {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__head {
+		padding-bottom: rem(17);
+	}
+
+	&__btnWrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include media-breakpoint-up(md) {
+			justify-content: flex-end;
+		}
+	}
+
+	&__basket {
+		margin-left: rem(18);
+	}
+
+	&__favorite {
+		color: $gray-500;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.icon {
+			color: $pink;
+			margin-right: rem(6);
+			font-size: rem(18);
+			@include mt;
+		}
+		
+
+		&:hover {
+			color: $gray-100;
+
+			.icon {
+				transform: scale(1.1);
+			}
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

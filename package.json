@@ -55,10 +55,7 @@
     "inputmask": "^5.0.3",
     "ion-rangeslider": "^2.3.1",
     "jquery": "^3.5.1",
-    "object-fit-images": "^3.2.4",
-    "picturefill": "^3.0.3",
     "popper.js": "^1.16.1",
-    "svg4everybody": "^2.1.9",
     "swiper": "^5.4.5",
     "wowjs": "^1.1.3"
   }

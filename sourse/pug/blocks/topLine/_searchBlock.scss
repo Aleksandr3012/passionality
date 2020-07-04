@@ -1,0 +1,34 @@
+.searchBlock {
+	position: relative;
+	
+	@include media-breakpoint-up(sm) {
+		min-width: rem(342px);
+	}
+	@include media-breakpoint-down(lg) {
+		margin-top: rem(20);
+	}
+
+	&__btn {
+		color: #cdcdcd;
+		position: absolute;
+		top: 13%;
+		top: rem(7);
+		right: rem(2);
+
+		.icon {
+			font-size: rem(21);
+		}
+	}
+
+	&__input {
+		border-radius: rem(30);
+		padding: rem(8) rem(15) rem(10) rem(20);
+		border: 1px solid $gray-800;
+		background-color: $body-color;
+		width: 100%;
+		color: #c2c2c2;
+		@include media-breakpoint-up(xl) {
+			margin-left: rem(6);
+		}
+	}
+}
