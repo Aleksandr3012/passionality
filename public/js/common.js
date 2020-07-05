@@ -267,7 +267,7 @@ function eventHandler() {
 		$(".s-filter").slideToggle();
 	});
 	$(".search-js").click(function () {
-		$(this).addClass('d-none');
+		$(this).parent().toggleClass('active');
 		$(".searchBlock--js").toggle();
 	});
 	$(".viber-link").each(function () {

@@ -298,7 +298,7 @@ function eventHandler() {
 	});
 
 	$(".search-js").click(function () {
-		$(this).addClass('d-none');
+		$(this).parent().toggleClass('active');
 		$(".searchBlock--js").toggle();
 	});
 

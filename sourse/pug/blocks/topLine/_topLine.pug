@@ -3,13 +3,6 @@ mixin topLine()
 	+b.topLine#topLine&attributes(attributes)
 		.container
 			+e.head
-				+e.search.d-md-none
-					+e.searchButton.search-js
-						+icon('search')
-					+b.FORM.searchBlock.searchBlock--js
-						+e.INPUT.input(type="text" placeholder="Поиск товаров")
-						+e.BUTTON.btn.btn-transparent(type="button")
-							+icon('search')
 				+e.phone(href="tel:+7(978)015-15-33") +7 (978) #[span 015-15-33]
 				+e.whatsapp(href="https://wa.me/79780151533" target="_blank")
 					img(src="img/@2x/whatsapp.png", alt="")
@@ -29,11 +22,14 @@ mixin topLine()
 				.col-auto
 					+e.logo(href="/")
 						img.res-i(src="img/@2x/logo.png", alt="")
-				+e.col.col-md.d-none.d-md-block
-					+b.FORM.searchBlock
-						+e.INPUT.input(type="text" placeholder="Поиск товаров")
-						+e.BUTTON.btn.btn-transparent(type="button")
+				+e.col.col-md
+					+e.search
+						+e.searchButton.search-js
 							+icon('search')
+						+b.FORM.searchBlock.searchBlock--js
+							+e.INPUT.input(type="text" placeholder="Поиск товаров")
+							+e.BUTTON.btn.btn-transparent(type="button")
+								+icon('search')
 				.col-md-auto.d-none.d-md-block
 					+e.btnWrap
 						+e.favorite(href="#")
