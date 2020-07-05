@@ -107,7 +107,9 @@
 	&__search {
 		position: relative;
 		width: 100%;
-		height: 10px;
+		@include media-breakpoint-down(md) {
+			height: 10px;
+		}
 		&.active {
 			height: rem(42);
 			.topLine__searchButton {
