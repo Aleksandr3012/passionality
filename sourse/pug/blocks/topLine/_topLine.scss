@@ -84,7 +84,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		@include media-breakpoint-up(sm) {
+		@include media-breakpoint-up(md) {
 			justify-content: flex-end;
 		}
 	}
@@ -104,27 +104,11 @@
 		}
 	}
 
-	&__search {
-		position: relative;
-		width: 100%;
-		@include media-breakpoint-down(md) {
-			height: 10px;
-		}
-		&.active {
-			height: rem(42);
-			.topLine__searchButton {
-				display: none;
-			}
-		}
-	}
 	&__searchButton {
-		position: absolute;
-		top: rem(-15);
-		right: rem(10);
-		z-index: 2;
 		.icon {
 			font-size: rem(21);
 			color: #cdcdcd;
+			margin-right: rem(5);
 		}
 	}
 
@@ -136,7 +120,7 @@
 			margin-left: rem(18);
 		}
 		@include media-breakpoint-down(lg) {
-			display: block;
+			display: flex;
 			background-color: transparent;
 			padding-left: rem(5);
 			padding-right: rem(5);
