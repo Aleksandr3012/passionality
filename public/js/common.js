@@ -261,6 +261,19 @@ function eventHandler() {
 		autoplay: {
 			delay: 6000
 		}
+	});
+	$(".filterBtn-js").click(function () {
+		$(this).toggleClass('active');
+		$(".s-filter").slideToggle();
+	});
+	$(".search-js").click(function () {
+		$(this).addClass('d-none');
+		$(".searchBlock--js").toggle();
+	});
+	$(".viber-link").each(function () {
+		if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			$(this).attr('href', $(this).data("desktop"));
+		}
 	}); // modal window
 	// var gets = (function () {
 	// 	var a = window.location.search;

@@ -3,6 +3,7 @@
 .s-filter {
 	border: 1px solid $gray-200;
 	padding: rem(25) rem(13) rem(22) rem(15);
+	display: none;
 
 	&__title {
 		margin-bottom: rem(10);
@@ -114,6 +115,11 @@
 
 } // end.sFilter
 
-.s-filter-wrap {
-
+.mobFilter {
+	img {
+		@include mt(0.1);
+	}
+	&.active img{
+		transform: rotate(180deg);
+	}
 }

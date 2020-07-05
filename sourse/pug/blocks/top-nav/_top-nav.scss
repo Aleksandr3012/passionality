@@ -6,8 +6,8 @@
 	z-index: 20;
 	@include mt;
 	@include media-breakpoint-up(lg) {
-		padding-bottom: rem(10px);
-		padding-top: rem(5px);
+		padding-bottom: rem(8px);
+		padding-top: rem(8px);
 	}
 	bottom: 0;
 	left: 0;
@@ -60,12 +60,6 @@
 		}
 		.icon-percent {
 			font-size: rem(24);
-		}
-
-		&:hover {
-			.icon {
-				transform: scale(1.05);
-			}
 		}
 	}
 

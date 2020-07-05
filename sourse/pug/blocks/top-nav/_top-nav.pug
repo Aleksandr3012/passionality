@@ -1,5 +1,5 @@
 mixin mob-mnu()
-	-
+	//- -
 		//- let path = require('path');
 		//- let fs = require('fs');
 		//- var requestURL = 'top-nav.json';
@@ -14,8 +14,11 @@ mixin mob-mnu()
 		+b.toggle-menu-mobile--js
 			span
 		+e.inner
-		
+			+e.logo(href="/")
+				img.lazy(src="#" data-src="img/@1x/logo.png", alt="")
 			+mnu()
+			+e.phone.mt-4.mb-3.d-block(href="tel:+7(978)015-15-33") +7 (978) #[span 015-15-33]
+			+e.phone.d-block(href="tel:+7(978)736-19-26") +7 (978) #[span 736-19-26]
 			.text-right
 	//  мобильное меню
 mixin top-nav() 
@@ -24,6 +27,5 @@ mixin top-nav()
 		.container
 			.d-none.d-lg-block
 				+mnu()
-			+mob-mnu
 					
 	// end top-nav

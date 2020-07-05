@@ -1,11 +1,12 @@
 .searchBlock {
 	position: relative;
-	
-	@include media-breakpoint-up(sm) {
+	width: 100%;
+	@include media-breakpoint-up(xl) {
 		min-width: rem(342px);
 	}
-	@include media-breakpoint-down(lg) {
-		margin-top: rem(20);
+	@include media-breakpoint-down(md) {
+		// margin-top: rem(10);
+		display: none;
 	}
 
 	&__btn {
@@ -22,9 +23,15 @@
 
 	&__input {
 		border-radius: rem(30);
-		padding: rem(8) rem(15) rem(10) rem(20);
+		padding: rem(8) rem(15) rem(8) rem(10);
+		@include media-breakpoint-up(sm) {
+			padding: rem(8) rem(15) rem(8) rem(20);
+		}
+		@include media-breakpoint-up(lg) {
+			padding: rem(8) rem(15) rem(10) rem(20);
+		}
 		border: 1px solid $gray-800;
-		background-color: $body-color;
+		background-color: #111111;
 		width: 100%;
 		color: #c2c2c2;
 		@include media-breakpoint-up(xl) {

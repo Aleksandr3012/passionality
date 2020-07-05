@@ -7,6 +7,8 @@ $h: em(2);
 	display: flex;
 	justify-content: flex-end;
 	height: $h* 10;
+	max-width: rem(35);
+	margin-left: rem(10);
 	position: relative;
 	color: $primary;
 	font-size: 32px;
@@ -46,7 +48,7 @@ $h: em(2);
 	span:before {
 		// width: 32px;
 		width: 1em;
-		height: $h;
+		height: $h * .95;
 		background-color: currentColor;
 		transition: all 0.3s;
 		backface-visibility: hidden;
@@ -97,6 +99,10 @@ $h: em(2);
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 		height: 100%;
+	}
+
+	&__phone {
+		color: $body-color;
 	}
 
 	&.active {

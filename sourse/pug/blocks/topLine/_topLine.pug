@@ -2,18 +2,39 @@ mixin topLine()
 	// start topLine
 	+b.topLine#topLine&attributes(attributes)
 		.container
-			+e.head.text-right
+			+e.head
+				+e.search.d-md-none
+					+e.searchButton.search-js
+						+icon('search')
+					+b.FORM.searchBlock.searchBlock--js
+						+e.INPUT.input(type="text" placeholder="Поиск товаров")
+						+e.BUTTON.btn.btn-transparent(type="button")
+							+icon('search')
 				+e.phone(href="tel:+7(978)015-15-33") +7 (978) #[span 015-15-33]
 				+e.whatsapp(href="https://wa.me/79780151533" target="_blank")
-					img.res-i(src="img/@2x/whatsapp.png", alt="")
-				+e.viber(href="#")
-					img.res-i(src="img/@2x/viber.png", alt="")
+					img(src="img/@2x/whatsapp.png", alt="")
+				+e.viber.viber-link(href="viber://add?number=79787361926" data-desktop="viber://chat?number=79787361926" target="_blank")
+					img(src="img/@2x/viber.png", alt="")
 				+e.phone(href="tel:+7(978)736-19-26") +7 (978) #[span 736-19-26]
+				+e.btnWrap.d-md-none
+					+e.favorite(href="#")
+						+icon('heart')
+						span Избранное
+					+e.basket.btn-pink(href="#")
+						+icon('basket')
+						span Корзина
+				+mob-mnu()
+
 			.row.align-items-center
 				.col-auto
 					+e.logo(href="/")
 						img.res-i(src="img/@2x/logo.png", alt="")
-				.col-md-auto.order-lg-last
+				+e.col.col-md.d-none.d-md-block
+					+b.FORM.searchBlock
+						+e.INPUT.input(type="text" placeholder="Поиск товаров")
+						+e.BUTTON.btn.btn-transparent(type="button")
+							+icon('search')
+				.col-md-auto.d-none.d-md-block
 					+e.btnWrap
 						+e.favorite(href="#")
 							+icon('heart')
@@ -21,11 +42,6 @@ mixin topLine()
 						+e.basket.btn-pink(href="#")
 							+icon('basket')
 							span Корзина
-				+e.col.col-lg
-					+b.FORM.searchBlock
-						+e.INPUT.input(type="text" placeholder="Поиск товаров")
-						+e.BUTTON.btn.btn-transparent(type="button")
-							+icon('search')
 
 
 	// end topLine

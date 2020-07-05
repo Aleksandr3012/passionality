@@ -1,5 +1,9 @@
 mixin s-filter()
 	.s-filter-wrap
+		.d-lg-none
+			.mobFilter.mb-4.filterBtn-js Фильтр
+				img.ml-2(src="img/svg/chevron-down.svg", alt="alt")
+
 		// start s-filter
 		mixin in-c2(typ="checkbox", text, name= typ )
 			+b.LABEL.custom-input
@@ -9,7 +13,7 @@ mixin s-filter()
 					block 
 				else
 					+e.SPAN.text= text
-		+b.s-filter&attributes(attributes) 
+		+b.s-filter.d-lg-block&attributes(attributes) 
 			mixin range(c1, c2)
 				.range-wrap.price_slider_amount
 					input.range-slider.slider-js(type='text'  data-min= c1  data-max= c2)
