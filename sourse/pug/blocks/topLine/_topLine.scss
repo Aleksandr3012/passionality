@@ -34,6 +34,7 @@
 	}
 
 	&__viber {
+		display: block;
 		margin-left: rem(5);
 		margin-right: rem(5);
 		@include media-breakpoint-up(sm) {
@@ -43,6 +44,7 @@
 	}
 
 	&__whatsapp {
+		display: block;
 		margin-left: rem(5);
 		@include media-breakpoint-up(md) {
 			margin-left: rem(22);
@@ -120,9 +122,13 @@
 
 
 	&__basket {
+		flex-shrink: 0;
 		margin-left: rem(10);
 		@include media-breakpoint-up(lg) {
 			margin-left: rem(18);
+		}
+		@include media-breakpoint-down(lg) {
+			display: block;
 		}
 	}
 
@@ -131,6 +137,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		flex-shrink: 0;
 
 		.icon {
 			color: $pink;
