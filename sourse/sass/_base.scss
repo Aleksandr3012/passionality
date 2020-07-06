@@ -469,6 +469,7 @@ iframe {
 	letter-spacing: rem(-0.1);
 	@extend .h6;
 	@include mt;
+	font-weight: 300;
 	margin-bottom: 0;
 	display: flex;
 	align-items: center;
