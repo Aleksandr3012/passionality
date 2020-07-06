@@ -2,7 +2,7 @@
 	position: relative;
 	width: 100%;
 	@include media-breakpoint-up(xl) {
-		min-width: rem(342px);
+		max-width: rem(342px);
 	}
 	@include media-breakpoint-down(md) {
 		// margin-top: rem(10);

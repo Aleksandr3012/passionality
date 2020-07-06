@@ -26,17 +26,18 @@ block pagecontent
 			.col-lg-3
 				+s-filter
 			.col-lg
-				.row
-					mixin rowItem
-						.col-6.col-lg-4
-							+catalogItem('catalog-1','Туалетная вода Trussardi My Land','2900 руб.')
-						.col-6.col-lg-4
-							+catalogItem('catalog-2','Туалетная вода Trussardi My Land','2900 руб.')
-						.col-6.col-lg-4
-							+catalogItem('catalog-3','Туалетная вода Trussardi My Land','2900 руб.')
-					+rowItem()
-					+rowItem()
-					+rowItem()
+				+sCatalog()
+					.row
+						mixin rowItem
+							.col-6.col-lg-4
+								+catalogItem('catalog-1','Туалетная вода Trussardi My Land','2900 руб.')
+							.col-6.col-lg-4
+								+catalogItem('catalog-2','Туалетная вода Trussardi My Land','2900 руб.')
+							.col-6.col-lg-4
+								+catalogItem('catalog-3','Туалетная вода Trussardi My Land','2900 руб.')
+						+rowItem()
+						+rowItem()
+						+rowItem()
 				+pugin()
 	+footer()
 	

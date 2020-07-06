@@ -263,12 +263,12 @@ function eventHandler() {
 
 	let partnersSlider = new Swiper('.brands-slider-js', {
 		loop: true,
-		spaceBetween: 20,
-	
+		spaceBetween: 30,
+		freeMode: true,
 		//responsive
 		breakpoints: {
 			1245: {
-				slidesPerView: 7,
+				slidesPerView: 'auto',
 			},
 			992: {
 				slidesPerView: 6,
@@ -287,9 +287,9 @@ function eventHandler() {
 			loadPrevNext: true,
 		},
 		//autoplay
-		autoplay: {
-			delay: 6000,
-		},
+		// autoplay: {
+		// 	delay: 6000,
+		// },
 	});
 
 	$(".filterBtn-js").click(function () {

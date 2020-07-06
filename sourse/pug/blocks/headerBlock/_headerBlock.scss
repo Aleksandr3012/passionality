@@ -13,8 +13,9 @@
 
 	h1, .h1 {
 		text-transform: uppercase;
-		letter-spacing: rem(-0.5);
+		// letter-spacing: rem(-0.5);
 		margin-bottom: rem(10);
+		font-weight: 900;
 		@include media-breakpoint-up(lg) {
 			margin-bottom: rem(34);
 		}
