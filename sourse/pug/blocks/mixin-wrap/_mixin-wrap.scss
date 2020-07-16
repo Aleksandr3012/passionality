@@ -67,7 +67,7 @@
 	@include media-breakpoint-up(md) {
 		padding: rem(28) rem(36) rem(34) rem(34);
 	}
-	// height: calc(100% - #{rem(20)});
+	height: calc(100% - #{rem(20)});
 	// height: 100%;
 	display: flex;
 	flex-direction: column;
