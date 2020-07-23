@@ -7,7 +7,10 @@
 
 	.h2 {
 		margin-bottom: rem(10) !important;
+	}
 
+	.h2, h6 {
+		font-weight: 400;
 	}
 
 	&__text {
